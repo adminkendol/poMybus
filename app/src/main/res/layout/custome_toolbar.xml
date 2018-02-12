@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryCust"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="?attr/actionBarTheme">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/status_toolbar"
+        android:gravity="right"
+        android:text="Status Aktif"
+        android:textColor="#e2ffff"
+        android:textSize="15sp"
+        android:layout_marginRight="10dp"
+        android:visibility="visible" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton"
+            android:textOff=""
+            android:textOn=""
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@layout/bg_toggle"
+            />
+
+    </LinearLayout>
+
+</android.support.v7.widget.Toolbar>
