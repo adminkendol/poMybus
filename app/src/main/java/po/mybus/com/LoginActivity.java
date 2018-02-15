@@ -33,6 +33,8 @@ import android.content.Intent;
 import java.util.ArrayList;
 import java.util.List;
 
+import po.mybus.com.module.Order;
+
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
@@ -48,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
 
 			public void onClick(View v) {
 			// TODO Auto-generated method stub
-				startActivity(new Intent(LoginActivity.this, MainActivity.class));
+				startActivity(new Intent(LoginActivity.this, Order.class));
 
 			}
 		});

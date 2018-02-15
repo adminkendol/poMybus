@@ -13,4 +13,12 @@ public class Dummy {
         String response ="[{\"nopol\":\"B 1234 BOS\",\"type\":\"Luxury Class - Commuter\",\"seat\":19,\"status\":1,\"reason\":\"\",\"photo\":\"photobus1\"},{\"nopol\":\"B 2534 BUS\",\"type\":\"Standard Class - Medium\",\"seat\":29,\"status\":2,\"reason\":\"Sudah dipesan offline\",\"photo\":\"photobus2\"}]";
         return response;
     }
+    public String dummyPromoStart(){
+        String response ="[{\"title\":\"Bonus IDR200K per 01 Januari 2018\",\"description\":\"apabila min 2 transaksi Order dan Pembayaran dilakukan pada jam 00.00 am sampai 21.00 pm \"},{\"title\":\"Daftarkan sebanyak-banyaknya armada\",\"description\":\"Dapatkan bonus tambahan dengan mendaftarkan min 5 armada anda\"}]";
+        return response;
+    }
+    public String dummyPromoEnd(){
+        String response ="[{\"title\":\"Bonus IDR200K per 01 Januari 2018\",\"description\":\"apabila min 2 transaksi Order dan Pembayaran dilakukan pada jam 00.00 am sampai 21.00 pm \"},{\"title\":\"Daftarkan sebanyak-banyaknya armada\",\"description\":\"Dapatkan bonus tambahan dengan mendaftarkan min 5 armada anda\"}]";
+        return response;
+    }
 }

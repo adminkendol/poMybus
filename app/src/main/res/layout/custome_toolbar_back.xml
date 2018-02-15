@@ -21,7 +21,7 @@
         android:gravity="right"
         android:text="Jadwal Pekerjaan"
         android:textColor="#e2ffff"
-        android:textSize="15sp"
+        android:textSize="18sp"
         android:layout_marginRight="10dp"
         android:visibility="visible" />
 

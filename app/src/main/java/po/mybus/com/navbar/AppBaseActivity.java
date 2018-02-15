@@ -21,6 +21,7 @@ import android.widget.FrameLayout;
 import po.mybus.com.R;
 import po.mybus.com.module.BusTersedia;
 import po.mybus.com.module.Jadwal;
+import po.mybus.com.module.Promo;
 
 /**
  * Created by Chandra on 09/02/2018.
@@ -138,6 +139,13 @@ public abstract class AppBaseActivity extends AppCompatActivity implements MenuI
 				this.startActivity( intent );
                 break;
             // and so on...
+            case R.id.item4:
+                mDrawerLayout.closeDrawer(GravityCompat.START);
+                Intent intentB;
+                intentB = new Intent(AppBaseActivity.this, Promo.class);
+                intentB.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
+                this.startActivity( intentB );
+                break;
         }
         return false;
 		//item.getItemId() = 0;

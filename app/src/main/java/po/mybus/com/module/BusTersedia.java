@@ -1,15 +1,20 @@
 package po.mybus.com.module;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,7 +42,7 @@ public class BusTersedia extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bus_tersedia);
+        setContentView(R.layout.bus_tersedia_fab);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
@@ -57,6 +62,8 @@ public class BusTersedia extends AppCompatActivity {
             e.printStackTrace();
         }
         initializeAdapter();
+
+
     }
     private void initializeData() throws JSONException {
         bM = new ArrayList<>();
@@ -91,4 +98,5 @@ public class BusTersedia extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

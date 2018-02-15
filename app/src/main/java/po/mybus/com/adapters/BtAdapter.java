@@ -1,12 +1,15 @@
 package po.mybus.com.adapters;
 
+import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -14,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -23,6 +27,7 @@ import java.util.List;
 import po.mybus.com.R;
 import po.mybus.com.models.btModel;
 import po.mybus.com.models.jadwalModel;
+import po.mybus.com.module.BusTersedia;
 
 /**
  * Created by Chandra on 11/02/2018.
@@ -30,7 +35,7 @@ import po.mybus.com.models.jadwalModel;
 
 public class BtAdapter extends RecyclerView.Adapter<BtAdapter.BtViewHolder> {
     Context context;
-
+    String pilih;
     public static class BtViewHolder extends RecyclerView.ViewHolder {
 
         CardView cv;
@@ -68,7 +73,7 @@ public class BtAdapter extends RecyclerView.Adapter<BtAdapter.BtViewHolder> {
         return jvh;
     }
     @Override
-    public void onBindViewHolder(BtViewHolder btViewHolder, int i) {
+    public void onBindViewHolder(final BtViewHolder btViewHolder, int i) {
         int id = context.getResources().getIdentifier(bM.get(i).photo, "drawable", context.getPackageName());
         btViewHolder.photo.setImageResource(id);
         btViewHolder.nopol.setText(bM.get(i).nopol);
@@ -80,10 +85,48 @@ public class BtAdapter extends RecyclerView.Adapter<BtAdapter.BtViewHolder> {
         }else{
             btViewHolder.tb.setChecked(false);
         }
+
+        btViewHolder.tb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!btViewHolder.tb.isChecked()){
+                    dialogFitur(btViewHolder);
+                }else {
+                    btViewHolder.reason.setText("");
+                }
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return bM.size();
+    }
+
+    private void dialogFitur(final BtViewHolder btViewHolder){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        //builder.setTitle("Choose an animal");
+        final String[] info = {"Armada dalam perbaikan", "Sudah dipesan offline","Tidak ada pengemudi","Lainnya"};
+        final int checkedItem = 1; // cow
+        pilih = info[1];
+        builder.setSingleChoiceItems(info, checkedItem, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // user checked an item
+                Log.d("SELECTED",info[which]);
+                pilih = info[which];
+            }
+        });
+        builder.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // user clicked OK
+                //Log.d("SELECTED",info[checkedItem]);
+                btViewHolder.reason.setText(pilih);
+            }
+        });
+        //builder.setNegativeButton("Cancel", null);
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
