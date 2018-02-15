@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorTh"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="po.mybus.com.module.BusTersedia">
+
+    <include layout="@layout/custome_toolbar_back" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:background="@color/colorSec">
+
+        <include layout="@layout/content_bt" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="30dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="29dp"
+                android:layout_marginRight="29dp"
+                android:background="@drawable/rounded_corner"
+                android:text="Tambah Armada"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_visitdetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="bottom|end"
+                android:src="@drawable/ic_action_add"
+                app:backgroundTint="@color/colorButtB" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
