@@ -10,6 +10,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -38,6 +40,7 @@
         <activity android:name=".module.Promo" android:theme="@style/AppTheme.Cust" android:noHistory="true"/>
         <activity android:name=".module.Order" android:theme="@style/AppTheme.Cust" android:noHistory="true"/>
         <activity android:name=".module.OrderDetail" android:theme="@style/AppTheme.Cust" android:noHistory="true"/>
+        <activity android:name=".module.Pengaturan" android:theme="@style/AppTheme.Cust" android:noHistory="true"/>
     </application>
 
 </manifest>

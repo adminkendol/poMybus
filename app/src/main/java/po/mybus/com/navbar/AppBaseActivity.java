@@ -17,10 +17,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import po.mybus.com.R;
 import po.mybus.com.module.BusTersedia;
 import po.mybus.com.module.Jadwal;
+import po.mybus.com.module.Pengaturan;
 import po.mybus.com.module.Promo;
 
 /**
@@ -33,7 +35,7 @@ public abstract class AppBaseActivity extends AppCompatActivity implements MenuI
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private Menu drawerMenu;
-
+    private TextView footer_item_2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +55,17 @@ public abstract class AppBaseActivity extends AppCompatActivity implements MenuI
             drawerMenu.getItem(i).setOnMenuItemClickListener(this);
         }
         // and so on...
+        footer_item_2 = (TextView)findViewById(R.id.footer_item_2);
+        footer_item_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawerLayout.closeDrawer(GravityCompat.START);
+                Intent intentC;
+                intentC = new Intent(AppBaseActivity.this, Pengaturan.class);
+                intentC.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
+                startActivity( intentC );
+            }
+        });
     }
     public void bukaMenu(){
         mDrawerLayout.openDrawer(GravityCompat.START);

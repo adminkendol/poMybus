@@ -11,7 +11,7 @@
 
     <include layout="@layout/custome_toolbar_back" />
 
-    <!----- Navigasi ----->
+    //----- Navigasi -----//
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,6 +57,7 @@
                     android:gravity="right"
                     android:orientation="horizontal">
                     <ImageView
+                        android:id="@+id/locNext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -66,7 +67,7 @@
         </android.support.v7.widget.CardView>
     </LinearLayout>
 
-    <!----- Setelan ----->
+    //----- Setelan -----//
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -87,14 +88,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorTextC"
+                    android:gravity="center"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="10dp"
                     android:text="Getar saat terima job"/>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -108,7 +111,7 @@
                         android:textOn=""
                         android:layout_width="40dp"
                         android:layout_height="20dp"
-                        android:background="@layout/bg_toggle"
+                        android:background="@layout/bg_set_toggle"
                         />
                 </LinearLayout>
             </LinearLayout>
@@ -120,6 +123,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
                 android:orientation="horizontal"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp">
@@ -127,8 +132,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorTextC"
+                    android:gravity="center"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="10dp"
                     android:text="Getar saat sentuh"/>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -142,7 +147,7 @@
                         android:textOn=""
                         android:layout_width="40dp"
                         android:layout_height="20dp"
-                        android:background="@layout/bg_toggle"
+                        android:background="@layout/bg_set_toggle"
                         />
                 </LinearLayout>
             </LinearLayout>
@@ -155,14 +160,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorTextC"
+                    android:gravity="center"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="10dp"
                     android:text="Custom Ringtone"/>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -171,6 +178,7 @@
                     android:layout_marginRight="15dp"
                     android:orientation="horizontal">
                     <ImageView
+                        android:id="@+id/ringNext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -180,7 +188,7 @@
         </android.support.v7.widget.CardView>
     </LinearLayout>
 
-    <!----- Setelan ----->
+    //----- Info -----//
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -194,6 +202,73 @@
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="10dp"
             android:text="Informasi perangkat"/>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email :"/>
+                    <TextView
+                        android:id="@+id/info_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="supiranda.hadir@gmail.com"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="IMEI :"/>
+                    <TextView
+                        android:id="@+id/info_imei"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12345"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Device ID :"/>
+                    <TextView
+                        android:id="@+id/info_dev"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="54321"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Version :"/>
+                    <TextView
+                        android:id="@+id/info_ver"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1.0.1"/>
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
     </LinearLayout>
 
 
