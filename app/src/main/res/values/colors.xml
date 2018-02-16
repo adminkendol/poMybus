@@ -11,4 +11,6 @@
     <color name="colorButtA">#ef4e24</color>
     <color name="colorButtB">#f04f1b</color>
     <color name="colorTextA">#ffffff</color>
+    <color name="colorTextB">#000000</color>
+    <color name="colorTextC">#746f6f</color>
 </resources>
