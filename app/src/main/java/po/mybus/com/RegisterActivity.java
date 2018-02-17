@@ -28,6 +28,10 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
-
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, LoginActivity.class));
+        finish();
+    }
 
 }

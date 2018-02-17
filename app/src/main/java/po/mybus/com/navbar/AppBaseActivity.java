@@ -1,5 +1,7 @@
 package po.mybus.com.navbar;
 
+import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -8,7 +10,9 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.ContextThemeWrapper;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -140,6 +144,7 @@ public abstract class AppBaseActivity extends AppCompatActivity implements MenuI
                 intentA = new Intent(AppBaseActivity.this, BusTersedia.class);
                 intentA.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
                 this.startActivity( intentA );
+                finish();
                 break;
             case R.id.item2:
                 // do whatever
@@ -151,6 +156,7 @@ public abstract class AppBaseActivity extends AppCompatActivity implements MenuI
                 //startActivity(intent);
 				intent.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
 				this.startActivity( intent );
+                finish();
                 break;
             // and so on...
             case R.id.item4:
@@ -159,6 +165,7 @@ public abstract class AppBaseActivity extends AppCompatActivity implements MenuI
                 intentB = new Intent(AppBaseActivity.this, Promo.class);
                 intentB.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
                 this.startActivity( intentB );
+                finish();
                 break;
             case R.id.item5:
                 mDrawerLayout.closeDrawer(GravityCompat.START);
@@ -166,9 +173,42 @@ public abstract class AppBaseActivity extends AppCompatActivity implements MenuI
                 intentB = new Intent(AppBaseActivity.this, Bantuan.class);
                 intentB.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
                 this.startActivity( intentB );
+                finish();
                 break;
         }
         return false;
 		//item.getItemId() = 0;
+    }
+    public void exit() {
+        @SuppressLint("RestrictedApi")
+        ContextThemeWrapper ctw = new ContextThemeWrapper(this, R.style.AppTheme_PopupOverlay);
+        AlertDialog.Builder builder = new AlertDialog.Builder(ctw);
+        builder.setMessage("Apakah Anda ingin keluar dari aplikasi ?")
+                .setCancelable(false)
+                .setPositiveButton("Ya", new
+                        DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                android.os.Process.killProcess(android.os.Process.myPid());
+                            }
+                        })
+                .setNegativeButton("Tidak", new
+                        DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int arg1) {
+                                // TODO Auto-generated method stub
+                                dialog.cancel();
+                            }
+
+                        }).show();
+    }
+    //int backButtonCount = 0;
+    public void onBackPressed(){
+        exit();
+        /*if(backButtonCount >= 1){
+            exit();
+        }else{
+            Toast.makeText(this, "Press the back button once again to close the application.", Toast.LENGTH_SHORT).show();
+            backButtonCount++;
+        }*/
     }
 }

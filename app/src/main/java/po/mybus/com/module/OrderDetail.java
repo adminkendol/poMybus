@@ -1,5 +1,6 @@
 package po.mybus.com.module;
 
+import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -19,6 +20,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 
+import po.mybus.com.MainActivity;
 import po.mybus.com.R;
 import po.mybus.com.navbar.AppBaseActivity;
 
@@ -72,5 +74,10 @@ public class OrderDetail extends AppBaseActivity implements OnMapReadyCallback {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 }

@@ -28,6 +28,7 @@ public class Order extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 startActivity(new Intent(Order.this, MainActivity.class));
+                finish();
 
             }
         });
@@ -36,6 +37,7 @@ public class Order extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 startActivity(new Intent(Order.this, OrderDetail.class));
+                finish();
 
             }
         });
@@ -53,5 +55,10 @@ public class Order extends AppCompatActivity {
             }
         };
         handler.postDelayed(runnable, 1000);
+    }
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 }
