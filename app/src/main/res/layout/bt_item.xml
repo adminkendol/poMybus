@@ -62,18 +62,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="right"
-                android:padding="5dp"
-                android:orientation="vertical">
+                android:gravity="end"
+                android:padding="10dp"
+                android:orientation="horizontal">
 
                 <ToggleButton
                     android:id="@+id/toggleButton"
                     android:layout_width="30dp"
                     android:layout_height="15dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="right"
                     android:background="@layout/bg_bt_toggle"
                     android:textOff=""
                     android:textOn="" />

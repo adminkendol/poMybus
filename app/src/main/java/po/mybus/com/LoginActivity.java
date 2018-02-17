@@ -51,10 +51,16 @@ public class LoginActivity extends AppCompatActivity {
 			public void onClick(View v) {
 			// TODO Auto-generated method stub
 				startActivity(new Intent(LoginActivity.this, Order.class));
+			}
+		});
+		TextView daftar = (TextView) findViewById(R.id.daftar);
+		daftar.setOnClickListener(new OnClickListener() {
 
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
 			}
 		});
 	}
 	
 }
-

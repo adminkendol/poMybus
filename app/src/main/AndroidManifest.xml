@@ -22,7 +22,6 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:screenOrientation="portrait"
         android:theme="@style/AppTheme">
 
         <meta-data
@@ -32,20 +31,22 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.Cust">
+            android:theme="@style/AppTheme.Cust"
+            android:configChanges="orientation" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" android:theme="@style/AppTheme.Cust" android:noHistory="true"/>
-        <activity android:name=".MainActivity" android:theme="@style/AppTheme.Cust"/>
-        <activity android:name=".module.Jadwal" android:theme="@style/AppTheme.Cust" android:noHistory="true"/>
-        <activity android:name=".module.BusTersedia" android:theme="@style/AppTheme.Cust" android:noHistory="true"/>
-        <activity android:name=".module.Promo" android:theme="@style/AppTheme.Cust" android:noHistory="true"/>
-        <activity android:name=".module.Order" android:theme="@style/AppTheme.Cust" android:noHistory="true"/>
-        <activity android:name=".module.OrderDetail" android:theme="@style/AppTheme.Cust" android:noHistory="true"/>
-        <activity android:name=".module.Pengaturan" android:theme="@style/AppTheme.Cust" android:noHistory="true"/>
+        <activity android:name=".RegisterActivity" android:theme="@style/AppTheme.Cust" android:noHistory="true" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity" android:theme="@style/AppTheme.Cust" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".module.Jadwal" android:theme="@style/AppTheme.Cust" android:noHistory="true" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".module.BusTersedia" android:theme="@style/AppTheme.Cust" android:noHistory="true" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".module.Promo" android:theme="@style/AppTheme.Cust" android:noHistory="true" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".module.Order" android:theme="@style/AppTheme.Cust" android:noHistory="true" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".module.OrderDetail" android:theme="@style/AppTheme.Cust" android:noHistory="true" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".module.Pengaturan" android:theme="@style/AppTheme.Cust" android:noHistory="true" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".module.Bantuan" android:theme="@style/AppTheme.Cust" android:noHistory="true" android:configChanges="orientation" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

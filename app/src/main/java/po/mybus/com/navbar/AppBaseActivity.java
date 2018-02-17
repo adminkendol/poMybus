@@ -20,6 +20,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import po.mybus.com.R;
+import po.mybus.com.module.Bantuan;
 import po.mybus.com.module.BusTersedia;
 import po.mybus.com.module.Jadwal;
 import po.mybus.com.module.Pengaturan;
@@ -156,6 +157,13 @@ public abstract class AppBaseActivity extends AppCompatActivity implements MenuI
                 mDrawerLayout.closeDrawer(GravityCompat.START);
                 Intent intentB;
                 intentB = new Intent(AppBaseActivity.this, Promo.class);
+                intentB.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
+                this.startActivity( intentB );
+                break;
+            case R.id.item5:
+                mDrawerLayout.closeDrawer(GravityCompat.START);
+                Intent intentD;
+                intentB = new Intent(AppBaseActivity.this, Bantuan.class);
                 intentB.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
                 this.startActivity( intentB );
                 break;

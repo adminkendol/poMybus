@@ -144,7 +144,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_toLeftOf="@+id/img1"
                         android:layout_toStartOf="@+id/img1"
-                        android:hint="password"
+                        android:hint="Password"
                         android:inputType="textPassword"
                         android:maxLines="1"
                         android:scaleType="fitStart"
@@ -190,6 +190,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
