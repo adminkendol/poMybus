@@ -12,6 +12,10 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<!--<uses-permission-sdk-23 android:name="android.permission.READ_CONTACTS" />
+    <uses-permission-sdk-23 android:name="android.permission.WRITE_CONTACTS" />
+	<uses-permission-sdk-23 android:name="android.permission.READ_CONTACTS" />
+    <uses-permission-sdk-23 android:name="android.permission.READ_PHONE_STATE" />-->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -34,6 +38,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RegisterActivity" android:theme="@style/AppTheme.Cust" android:noHistory="true"/>
         <activity android:name=".MainActivity" android:theme="@style/AppTheme.Cust"/>
         <activity android:name=".module.Jadwal" android:theme="@style/AppTheme.Cust" android:noHistory="true"/>
         <activity android:name=".module.BusTersedia" android:theme="@style/AppTheme.Cust" android:noHistory="true"/>

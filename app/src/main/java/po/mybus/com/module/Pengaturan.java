@@ -47,6 +47,7 @@ public class Pengaturan extends AppCompatActivity {
     private TextView info_imei;
     private TextView info_dev;
     private TextView info_ver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,7 +94,7 @@ public class Pengaturan extends AppCompatActivity {
         info_email = (TextView) findViewById(R.id.info_email);
         info_email.setText(possibleEmail);
         info_imei = (TextView) findViewById(R.id.info_imei);
-        TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+        TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         info_imei.setText(getDeviceID(telephonyManager));
 
         String androidId = Settings.Secure.getString(getContentResolver(),
@@ -106,14 +107,14 @@ public class Pengaturan extends AppCompatActivity {
 
         ImageView locNext = (ImageView) findViewById(R.id.locNext);
         locNext.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View v) {
-                                            startActivity(
-                                                    new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-                                        }
-                                    });
+            @Override
+            public void onClick(View v) {
+                startActivity(
+                        new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+            }
+        });
 
-        ImageView ringNext= (ImageView) findViewById(R.id.ringNext);
+        ImageView ringNext = (ImageView) findViewById(R.id.ringNext);
         ringNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,8 +150,17 @@ public class Pengaturan extends AppCompatActivity {
         }
         return deviceUniqueIdentifier;
     }*/
-    String getDeviceID(TelephonyManager phonyManager){
-        @SuppressLint({"HardwareIds", "MissingPermission"})
+    String getDeviceID(TelephonyManager phonyManager) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return "Error Permission";
+        }
         String id = phonyManager.getDeviceId();
         if (id == null){
             id = "not available";
@@ -159,13 +169,11 @@ public class Pengaturan extends AppCompatActivity {
         switch(phoneType){
             case TelephonyManager.PHONE_TYPE_NONE:
                 return "NONE: " + id;
-
             case TelephonyManager.PHONE_TYPE_GSM:
                 //return "GSM: IMEI=" + id;
                 return id;
             case TelephonyManager.PHONE_TYPE_CDMA:
                 return "CDMA: MEID/ESN=" + id;
-
                 /*
                 *  for API Level 11 or above
                 *  case TelephonyManager.PHONE_TYPE_SIP:
