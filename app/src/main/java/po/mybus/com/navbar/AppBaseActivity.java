@@ -69,6 +69,7 @@ public abstract class AppBaseActivity extends AppCompatActivity implements MenuI
                 intentC = new Intent(AppBaseActivity.this, Pengaturan.class);
                 intentC.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
                 startActivity( intentC );
+				finish();
             }
         });
     }
