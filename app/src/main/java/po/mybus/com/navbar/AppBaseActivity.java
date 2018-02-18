@@ -29,6 +29,7 @@ import po.mybus.com.module.BusTersedia;
 import po.mybus.com.module.Jadwal;
 import po.mybus.com.module.Pengaturan;
 import po.mybus.com.module.Promo;
+import po.mybus.com.module.Riwayat;
 
 /**
  * Created by Chandra on 09/02/2018.
@@ -149,6 +150,12 @@ public abstract class AppBaseActivity extends AppCompatActivity implements MenuI
                 break;
             case R.id.item2:
                 // do whatever
+                mDrawerLayout.closeDrawer(GravityCompat.START);
+                Intent intentE;
+                intentE = new Intent(AppBaseActivity.this, Riwayat.class);
+                intentE.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
+                this.startActivity( intentE );
+                finish();
                 break;
             case R.id.item3:
 				mDrawerLayout.closeDrawer(GravityCompat.START);
@@ -171,9 +178,9 @@ public abstract class AppBaseActivity extends AppCompatActivity implements MenuI
             case R.id.item5:
                 mDrawerLayout.closeDrawer(GravityCompat.START);
                 Intent intentD;
-                intentB = new Intent(AppBaseActivity.this, Bantuan.class);
-                intentB.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
-                this.startActivity( intentB );
+                intentD = new Intent(AppBaseActivity.this, Bantuan.class);
+                intentD.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
+                this.startActivity( intentD );
                 finish();
                 break;
         }

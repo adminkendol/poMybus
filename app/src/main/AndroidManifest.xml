@@ -47,6 +47,7 @@
         <activity android:name=".module.OrderDetail" android:theme="@style/AppTheme.Cust" android:noHistory="true" android:configChanges="orientation" android:screenOrientation="portrait"/>
         <activity android:name=".module.Pengaturan" android:theme="@style/AppTheme.Cust" android:noHistory="true" android:configChanges="orientation" android:screenOrientation="portrait"/>
         <activity android:name=".module.Bantuan" android:theme="@style/AppTheme.Cust" android:noHistory="true" android:configChanges="orientation" android:screenOrientation="portrait"/>
-    </application>
+        <activity android:name=".module.Riwayat" android:theme="@style/AppTheme.Cust" android:noHistory="true" android:configChanges="orientation" android:screenOrientation="portrait"/>
+	</application>
 
 </manifest>
