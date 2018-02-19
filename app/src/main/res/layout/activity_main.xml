@@ -58,7 +58,6 @@
 		android:adjustViewBounds="true"
 		android:scaleType="fitXY"
 		android:src="@drawable/banner1" />
-
 	<LinearLayout
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
@@ -67,21 +66,26 @@
 		android:layout_marginBottom="30dp"
 		android:layout_marginLeft="20dp"
 		android:layout_below="@+id/slide"
+		android:weightSum="100"
 		android:orientation="horizontal">
-
+		
 		<de.hdodenhof.circleimageview.CircleImageView
 			xmlns:app="http://schemas.android.com/apk/res-auto"
 			android:id="@+id/profile_image"
-			android:layout_width="120dp"
-			android:layout_height="120dp"
+			android:layout_weight="25"
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
 			android:layout_centerHorizontal="true"
-			android:layout_centerVertical="true"
+			android:layout_centerVertical="false"
+			android:layout_alignParentTop="true"
+			android:scaleType="centerCrop"
 			android:src="@drawable/bis"
 			app:civ_border_color="#738ffa"
 			app:civ_border_width="5dp" />
 		<LinearLayout
-			android:layout_width="wrap_content"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
+			android:layout_weight="75"
 			android:gravity="start"
 			android:orientation="vertical"
 			android:layout_marginLeft="10dp">
@@ -107,7 +111,7 @@
 		</LinearLayout>
 
 	</LinearLayout>
-
+	
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
