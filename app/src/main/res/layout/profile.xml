@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSec"
+    android:gravity="start"
+    tools:context="po.mybus.com.Profile">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryCust"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/status_toolbar"
+                android:gravity="right"
+                android:text=""
+                android:textColor="#e2ffff"
+                android:textSize="18sp"
+                android:layout_marginRight="10dp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+	<LinearLayout
+		android:id="@+id/capture"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/toolbar"
+		android:gravity="top"
+		android:orientation="vertical"
+		android:weightSum="100">
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="0dp"
+			android:layout_below="@+id/toolbar"
+			android:layout_weight="20"
+			android:layout_marginTop="10dp"
+			android:layout_marginBottom="10dp"
+			android:gravity="center"
+			android:orientation="horizontal"
+			android:weightSum="100">
+			<de.hdodenhof.circleimageview.CircleImageView
+				android:id="@+id/profile_image"
+				android:layout_width="0dp"
+				android:layout_height="200dp"
+				android:layout_weight="20"
+				android:adjustViewBounds="false"
+				android:cropToPadding="false"
+				android:requiresFadingEdge="none"
+				android:scaleType="centerCrop"
+				android:src="@drawable/bis"
+				app:civ_border_color="@color/colorButtA"
+				app:civ_border_width="5dp" />
+		</LinearLayout>
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="70"
+			android:background="@color/colorSec"
+			android:gravity="center_horizontal"
+			android:orientation="vertical"
+			android:paddingLeft="@dimen/activity_horizontal_margin"
+			android:paddingRight="@dimen/activity_horizontal_margin">
+			<android.support.v7.widget.CardView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:gravity="left"
+					android:orientation="vertical"
+					android:paddingBottom="20dp"
+					android:paddingTop="20dp">
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="10dp"
+						android:orientation="horizontal"
+						android:paddingLeft="10dp"
+						android:paddingRight="10dp">
+						<ImageView
+							android:id="@+id/img1"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:scaleType="fitXY"
+							android:src="@drawable/org" />
+						<EditText
+							android:id="@+id/name"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginLeft="10dp"
+							android:layout_toLeftOf="@+id/img1"
+							android:layout_toStartOf="@+id/img1"
+							android:hint="Name"
+							android:text="Supiranda Hadir"
+							android:textColor="#000000"
+							android:maxLines="1"
+							android:scaleType="fitStart"
+							android:singleLine="true"
+							android:textSize="12sp" />
+					</LinearLayout>
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="10dp"
+						android:orientation="horizontal"
+						android:paddingLeft="10dp"
+						android:paddingRight="10dp">
+						<ImageView
+							android:id="@+id/img2"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:scaleType="fitXY"
+							android:src="@drawable/ic_phone_reg" />
+						<EditText
+							android:id="@+id/phone1"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginLeft="10dp"
+							android:layout_toLeftOf="@+id/img1"
+							android:layout_toStartOf="@+id/img1"
+							android:hint="+62"
+							android:text="+62"
+							android:textColor="#000000"
+							android:maxLines="1"
+							android:scaleType="fitStart"
+							android:singleLine="true"
+							android:textSize="12sp" />
+						<EditText
+							android:id="@+id/phone2"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginLeft="5dp"
+							android:layout_toLeftOf="@+id/img1"
+							android:layout_toStartOf="@+id/img1"
+							android:hint="(812xxxxxxxxx)"
+							android:text="87777920933"
+							android:textColor="#000000"
+							android:maxLines="1"
+							android:scaleType="fitStart"
+							android:singleLine="true"
+							android:textSize="12sp" />
+					</LinearLayout>
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="10dp"
+						android:orientation="horizontal"
+						android:paddingLeft="10dp"
+						android:paddingRight="10dp">
+						<ImageView
+							android:id="@+id/img3"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:scaleType="fitXY"
+							android:src="@drawable/ic_email_reg" />
+						<EditText
+							android:id="@+id/email"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginLeft="10dp"
+							android:layout_toLeftOf="@+id/img1"
+							android:layout_toStartOf="@+id/img1"
+							android:hint="Email (name@email.com)"
+							android:text="supiranda.hadir@gmail.com"
+							android:textColor="#000000"
+							android:maxLines="1"
+							android:scaleType="fitStart"
+							android:singleLine="true"
+							android:textSize="12sp" />
+					</LinearLayout>
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal"
+						android:paddingLeft="10dp"
+						android:paddingRight="10dp">
+						<ImageView
+							android:id="@+id/img4"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:scaleType="fitXY"
+							android:src="@drawable/key" />
+						<EditText
+							android:id="@+id/password"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginLeft="10dp"
+							android:layout_toLeftOf="@+id/img1"
+							android:layout_toStartOf="@+id/img1"
+							android:hint="Password"
+							android:text="*********"
+							android:textColor="#000000"
+							android:inputType="textPassword"
+							android:maxLines="1"
+							android:scaleType="fitStart"
+							android:singleLine="true"
+							android:textSize="12sp" />
+					</LinearLayout>
+				</LinearLayout>
+			</android.support.v7.widget.CardView>
+		</LinearLayout>
+
+	</LinearLayout>
+
+
+	<LinearLayout
+        android:id="@+id/update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimaryCust"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/colorTextA"
+            android:text="Update"/>
+    </LinearLayout>
+
+</RelativeLayout>
