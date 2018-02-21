@@ -1,5 +1,6 @@
 package po.mybus.com;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import po.mybus.com.module.Bantuan;
+import po.mybus.com.module.Profile;
 import po.mybus.com.navbar.AppBaseActivity;
 
 public class MainActivity extends AppBaseActivity {
@@ -44,7 +47,16 @@ public class MainActivity extends AppBaseActivity {
                 }
             }
         });
-
+        CircleImageView profile_image = (CircleImageView)findViewById(R.id.profile_image);
+        profile_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent;
+                intent = new Intent(MainActivity.this, Profile.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
