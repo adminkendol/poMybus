@@ -29,22 +29,52 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.content.Intent;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import po.mybus.com.module.Order;
-
+import po.mybus.com.helper.LanguageHelper;
+import po.mybus.com.storages.Session;
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
  * A login screen that offers login via email/password.
  */
 public class LoginActivity extends AppCompatActivity {
+	Session session;
+    String num;
+    String lg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+		reload();
+		session = new Session(getApplicationContext());
+		num = session.getLang();
+        Log.d("lang id",num);
+        if(num.equals("0")){
+            lg = "en";
+        }else{
+            lg = "in";
+        }
+        LanguageHelper.setAppLocale(lg, LoginActivity.this);
+		
+	}
+	@Override
+	public void onResume(){
+		super.onResume();
+		setContentView(R.layout.activity_login);
+		reload();
+	}
+	/*@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		// refresh your views here
+		setContentView(R.layout.activity_login);
+		super.onConfigurationChanged(newConfig);
+	}*/
+	protected void reload(){
 		Button button = (Button) findViewById(R.id.email_sign_in_button);
 		button.setOnClickListener(new OnClickListener() {
 

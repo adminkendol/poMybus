@@ -16,14 +16,35 @@ import android.widget.ToggleButton;
 import de.hdodenhof.circleimageview.CircleImageView;
 import po.mybus.com.module.Bantuan;
 import po.mybus.com.module.Profile;
+import po.mybus.com.helper.LanguageHelper;
+import po.mybus.com.storages.Session;
 import po.mybus.com.navbar.AppBaseActivity;
 
 public class MainActivity extends AppBaseActivity {
-
+	
+	private String st;
+	private String stNon;
+	private Session session;
+    private String num;
+    private String lg;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+		session = new Session(getApplicationContext());
+		num = session.getLang();
+        Log.d("lang id",num);
+        if(num.equals("0")){
+            lg = "en";
+			st="Active";
+			stNon="Not Active";
+        }else{
+            lg = "in";
+			st="Status aktif";
+			stNon="Status tidak aktif";
+        }
+        LanguageHelper.setAppLocale(lg, MainActivity.this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
         toolbar.setNavigationIcon(R.drawable.menu);
@@ -37,16 +58,20 @@ public class MainActivity extends AppBaseActivity {
         final ToggleButton tb = (ToggleButton) findViewById(R.id.toggleButton);
         final TextView status_toolbar=(TextView) findViewById(R.id.status_toolbar);
         tb.setChecked(true);
+		status_toolbar.setText(st);
         tb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(tb.isChecked()){
-                    status_toolbar.setText("Status aktif");
+					//st = "Status aktif";
+					status_toolbar.setText(st);
                 }else {
-                    status_toolbar.setText("Status tidak aktif");
+					//st = "Status tidak aktif";
+                    status_toolbar.setText(stNon);
                 }
             }
         });
+		//status_toolbar.setText(st);
         CircleImageView profile_image = (CircleImageView)findViewById(R.id.profile_image);
         profile_image.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +82,8 @@ public class MainActivity extends AppBaseActivity {
                 finish();
             }
         });
-    }
+		
+	}
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();

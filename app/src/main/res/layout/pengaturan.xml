@@ -18,12 +18,13 @@
         android:orientation="vertical"
         android:padding="15dp">
         <TextView
+			android:id="@+id/string_navigasi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorTextB"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="10dp"
-            android:text="Navigasi"/>
+            android:text="@string/navigasi"/>
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -38,18 +39,20 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <TextView
+						android:id="@+id/atur_aplikasi_navigasi"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorTextC"
                         android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
-                        android:text="Atur Aplikasi Navigasi"/>
+                        android:text="@string/atur_aplikasi_navigasi"/>
                     <TextView
+						android:id="@+id/google_maps"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorTextC"
                         android:layout_marginLeft="10dp"
-                        android:text="Google Maps"/>
+                        android:text="@string/google_maps"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -75,12 +78,13 @@
         android:orientation="vertical"
         android:padding="15dp">
         <TextView
+			android:id="@+id/sett"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorTextB"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="10dp"
-            android:text="Setelan"/>
+            android:text="@string/sett"/>
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -93,12 +97,13 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp">
                 <TextView
+					android:id="@+id/getar_saat_terima_job"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorTextC"
                     android:gravity="center"
                     android:layout_marginLeft="10dp"
-                    android:text="Getar saat terima job"/>
+                    android:text="@string/getar_saat_terima_job"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -129,12 +134,13 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp">
                 <TextView
+					android:id="@+id/getar_saat_sentuh"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorTextC"
                     android:gravity="center"
                     android:layout_marginLeft="10dp"
-                    android:text="Getar saat sentuh"/>
+                    android:text="@string/getar_saat_sentuh"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -165,12 +171,13 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp">
                 <TextView
+					android:id="@+id/custom_ringtone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorTextC"
                     android:gravity="center"
                     android:layout_marginLeft="10dp"
-                    android:text="Custom Ringtone"/>
+                    android:text="@string/custom_ringtone"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -179,6 +186,41 @@
                     android:orientation="horizontal">
                     <ImageView
                         android:id="@+id/ringNext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/next"/>
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+                <TextView
+					android:id="@+id/bahasa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorTextC"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/bahasa"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:layout_marginRight="15dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/langNext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -196,12 +238,13 @@
         android:orientation="vertical"
         android:padding="15dp">
         <TextView
+			android:id="@+id/informasi_perangkat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorTextB"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="10dp"
-            android:text="Informasi perangkat"/>
+            android:text="@string/informasi_perangkat"/>
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -215,9 +258,10 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <TextView
+						android:id="@+id/email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Email :"/>
+                        android:text="@string/email"/>
                     <TextView
                         android:id="@+id/info_email"
                         android:layout_width="wrap_content"
@@ -229,9 +273,10 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <TextView
+						android:id="@+id/imei"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="IMEI :"/>
+                        android:text="@string/imei"/>
                     <TextView
                         android:id="@+id/info_imei"
                         android:layout_width="wrap_content"
@@ -243,9 +288,10 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <TextView
+						android:id="@+id/device_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Device ID :"/>
+                        android:text="@string/device_id"/>
                     <TextView
                         android:id="@+id/info_dev"
                         android:layout_width="wrap_content"
@@ -257,9 +303,10 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <TextView
+						android:id="@+id/version"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Version :"/>
+                        android:text="@string/version"/>
                     <TextView
                         android:id="@+id/info_ver"
                         android:layout_width="wrap_content"

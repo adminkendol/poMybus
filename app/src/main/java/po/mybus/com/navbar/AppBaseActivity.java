@@ -66,10 +66,11 @@ public abstract class AppBaseActivity extends AppCompatActivity implements MenuI
             @Override
             public void onClick(View v) {
                 mDrawerLayout.closeDrawer(GravityCompat.START);
-                Intent intentC;
-                intentC = new Intent(AppBaseActivity.this, Pengaturan.class);
-                intentC.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
-                startActivity( intentC );
+                //Intent intentC;
+                //intentC = new Intent(AppBaseActivity.this, Pengaturan.class);
+                //intentC.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
+                startActivity(new Intent(AppBaseActivity.this, Pengaturan.class));
+				//startActivity( intentC );
 				finish();
             }
         });
